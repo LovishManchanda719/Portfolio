@@ -9,25 +9,27 @@ const Projects = () => {
       name: 'Wanderlust',
       description: 'A full-stack MERN project for hotel bookings and listings.',
       link: 'https://wanderlust-hd9q.onrender.com',
-      image: 'https://drive.google.com/uc?id=1dXmS0c-dXfc7e6oE1bQf4a_WUBdh1xIZ'
+      image: 'https://drive.google.com/thumbnail?id=1dXmS0c-dXfc7e6oE1bQf4a_WUBdh1xIZ'
     },
     {
       name: 'Water Distribution System',
       description: 'React-based system for efficient water management in drought areas.',
-      image: 'https://drive.google.com/uc?id=19Mj5158KbMwUo65ckO4caahVpZtVExuq'
+      image: 'https://drive.google.com/thumbnail?id=19Mj5158KbMwUo65ckO4caahVpZtVExuq'
     },
     {
       name: 'Stock Prediction System',
-      description: 'Machine learning project for stock price prediction.'
+      description: 'Machine learning project for stock price prediction.',
+      image: '/Portfolio/images/stock.png' // You can add a default project image
     },
     {
       name: 'WhatsApp AI Chatbot',
-      description: 'Chatbot integrated with Gemini API.'
+      description: 'Chatbot integrated with Gemini API.',
+      image: '/Portfolio/images/chatbot.png' // You can add a default project image
     },
     {
       name: 'Discord Quiz-Bot',
       description: 'Trivia bot with Gemini API, real-time scoring, and leaderboards.',
-      image: 'https://drive.google.com/uc?id=1pChaQvFsacHCm5yda12kCN8P2fmSrHOv'
+      image: 'https://drive.google.com/thumbnail?id=1pChaQvFsacHCm5yda12kCN8P2fmSrHOv'
     }
   ];
 
@@ -44,6 +46,8 @@ const Projects = () => {
                   alt={project.name}
                   fill
                   className="object-cover"
+                  unoptimized // Add this to prevent optimization issues
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Add responsive sizes
                 />
               </div>
             )}
