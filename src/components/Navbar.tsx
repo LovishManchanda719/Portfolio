@@ -17,27 +17,29 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
   const router = useRouter();
 
   const navItems = [
-    { name: 'Home', href: '/Portfolio/' }, 
-    { name: 'About', href: '/Portfolio/#about' },          // Corrected anchor link
-    { name: 'Skills', href: '/Portfolio/#skills' },        // Corrected anchor link
-    { name: 'Projects', href: '/Portfolio/#projects' },    // Corrected anchor link
-    { name: 'Education', href: '/Portfolio/#education' },  // Corrected anchor link
-    { name: 'Blog', href: '/Portfolio/blog' },             // Blog remains the same
-    { name: 'Contact', href: '/Portfolio/#contact' }       // Corrected anchor link
+    { name: 'Home', href: '/' },             // No need for '/Portfolio', basePath handles it
+    { name: 'About', href: '/#about' },      // Corrected for anchor links
+    { name: 'Skills', href: '/#skills' },    // Corrected for anchor links
+    { name: 'Projects', href: '/#projects' },// Corrected for anchor links
+    { name: 'Education', href: '/#education'},// Corrected for anchor links
+    { name: 'Blog', href: '/blog' },         // Blog remains the same
+    { name: 'Contact', href: '/#contact' }   // Corrected for anchor links
   ];
+  
 
   const handleAuthAction = async () => {
     if (currentUser) {
       try {
         await logout();
-        router.push('/Portfolio/'); // Updated to handle base path
+        router.push('/'); // Redirect to the root of the basePath
       } catch (error) {
         console.error('Logout failed', error);
       }
     } else {
-      router.push('/Portfolio/auth'); // Updated to handle base path
+      router.push('/auth'); // Redirect to `/auth` under the basePath
     }
   };
+  
 
   return (
     <motion.nav 
