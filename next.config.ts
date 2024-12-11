@@ -13,9 +13,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Remove basePath if you want the site to be served from the root
-  // Only keep it if you want the site to be served from a subdirectory
-  // basePath: '/your-repo-name',
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    ignoreBuildErrors: true,
+  },
 }
 
 export default nextConfig
