@@ -17,13 +17,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
   const router = useRouter();
 
   const navItems = [
-    { name: 'Home', href: '/Portfolio/' },
-    { name: 'About', href: '/Portfolio/#about' },
-    { name: 'Skills', href: '/Portfolio/#skills' },
-    { name: 'Projects', href: '/Portfolio/#projects' },
-    { name: 'Education', href: '/Portfolio/#education' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Education', href: '/#education' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/Portfolio/#contact' }
+    { name: 'Contact', href: '/#contact' }
   ];
 
   const handleAuthAction = async () => {
