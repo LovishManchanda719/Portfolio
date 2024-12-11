@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="relative">
             <div className="absolute -inset-2 bg-blue-400 rounded-full blur-xl opacity-75 animate-pulse"></div>
             <Image 
-  src="https://drive.google.com/uc?id=19xozCjZdVsb4NhQ9V7Q1NpfeDYykKh6Z" 
+  src="https://lh3.googleusercontent.com/d/19xozCjZdVsb4NhQ9V7Q1NpfeDYykKh6Z" 
   alt="Lovish Manchanda"
   width={400}
   height={400}
