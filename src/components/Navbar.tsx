@@ -17,25 +17,25 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
   const router = useRouter();
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/#about' },
-    { name: 'Skills', href: '/#skills' },
-    { name: 'Projects', href: '/#projects' },
-    { name: 'Education', href: '/#education' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/#contact' }
+    { name: 'Home', href: '/Portfolio/' },
+    { name: 'About', href: '/Portfolio/#about' },
+    { name: 'Skills', href: '/Portfolio/#skills' },
+    { name: 'Projects', href: '/Portfolio/#projects' },
+    { name: 'Education', href: '/Portfolio/#education' },
+    { name: 'Blog', href: '/Portfolio/blog' },
+    { name: 'Contact', href: '/Portfolio/#contact' }
   ];
 
   const handleAuthAction = async () => {
     if (currentUser) {
       try {
         await logout();
-        router.push('/'); // Redirect to home after logout
+        router.push('/Portfolio/'); // Updated path
       } catch (error) {
         console.error('Logout failed', error);
       }
     } else {
-      router.push('/auth'); // Navigate to authentication page
+      router.push('/Portfolio/auth'); // Updated path
     }
   };
 
@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
       } shadow-md`}
     >
       <div className="container mx-auto flex justify-between items-center p-4">
-        <Link href="/" className="text-2xl font-bold">
+        <Link href="/Portfolio/" className="text-2xl font-bold">
           Lovish Manchanda
         </Link>
 
