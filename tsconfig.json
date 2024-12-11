@@ -18,8 +18,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": "src",  // Important: Set baseUrl to 'src'
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["*"],  // Resolves '@' to 'src'
+      "@context/*": ["context/*"],  // Add a specific alias for the 'context' folder
+      "@lib/*": ["lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
