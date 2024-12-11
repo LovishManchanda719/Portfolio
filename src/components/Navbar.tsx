@@ -18,12 +18,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
   const navItems = [
     { name: 'Home', href: '/Portfolio/' },
-    { name: 'About', href: '/Portfolio/#about' },
-    { name: 'Skills', href: '/Portfolio/#skills' },
-    { name: 'Projects', href: '/Portfolio/#projects' },
-    { name: 'Education', href: '/Portfolio/#education' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/Portfolio/#contact' }
+    { name: 'About', href: '#about' },           // Changed to anchor
+    { name: 'Skills', href: '#skills' },         // Changed to anchor
+    { name: 'Projects', href: '#projects' },     // Changed to anchor
+    { name: 'Education', href: '#education' },   // Changed to anchor
+    { name: 'Blog', href: '/blog' },   // Full path for non-anchor pages
+    { name: 'Contact', href: '#contact' }        // Changed to anchor
   ];
 
   const handleAuthAction = async () => {
@@ -65,6 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
                 className={`hover:text-blue-500 transition-colors ${
                   isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-700'
                 }`}
+                scroll={!item.href.startsWith('#')} // Disable scroll for anchor links
               >
                 {item.name}
               </Link>
