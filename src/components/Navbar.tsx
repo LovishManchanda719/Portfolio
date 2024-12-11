@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
     { name: 'Skills', href: '#skills' },         // Changed to anchor
     { name: 'Projects', href: '#projects' },     // Changed to anchor
     { name: 'Education', href: '#education' },   // Changed to anchor
-    { name: 'Blog', href: '/blog' },   // Full path for non-anchor pages
+    { name: 'Blog', href: '/Portfolio/blog' },   // Full path for non-anchor pages
     { name: 'Contact', href: '#contact' }        // Changed to anchor
   ];
 
