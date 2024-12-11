@@ -17,25 +17,25 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
   const router = useRouter();
 
   const navItems = [
-    { name: 'Home', href: '/Portfolio/' },
-    { name: 'About', href: '#about' },           // Changed to anchor
-    { name: 'Skills', href: '#skills' },         // Changed to anchor
-    { name: 'Projects', href: '#projects' },     // Changed to anchor
-    { name: 'Education', href: '#education' },   // Changed to anchor
-    { name: 'Blog', href: '/Portfolio/blog' },   // Full path for non-anchor pages
-    { name: 'Contact', href: '#contact' }        // Changed to anchor
+    { name: 'Home', href: '/Portfolio/' }, 
+    { name: 'About', href: '/Portfolio/#about' },          // Corrected anchor link
+    { name: 'Skills', href: '/Portfolio/#skills' },        // Corrected anchor link
+    { name: 'Projects', href: '/Portfolio/#projects' },    // Corrected anchor link
+    { name: 'Education', href: '/Portfolio/#education' },  // Corrected anchor link
+    { name: 'Blog', href: '/Portfolio/blog' },             // Blog remains the same
+    { name: 'Contact', href: '/Portfolio/#contact' }       // Corrected anchor link
   ];
 
   const handleAuthAction = async () => {
     if (currentUser) {
       try {
         await logout();
-        router.push('/Portfolio/'); // Updated path
+        router.push('/Portfolio/'); // Updated to handle base path
       } catch (error) {
         console.error('Logout failed', error);
       }
     } else {
-      router.push('/Portfolio/auth'); // Updated path
+      router.push('/Portfolio/auth'); // Updated to handle base path
     }
   };
 
@@ -65,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
                 className={`hover:text-blue-500 transition-colors ${
                   isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-700'
                 }`}
-                scroll={!item.href.startsWith('#')} // Disable scroll for anchor links
+                scroll={!item.href.includes('#')} // Disable scroll for anchor links
               >
                 {item.name}
               </Link>
