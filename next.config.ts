@@ -6,12 +6,7 @@ const nextConfig: NextConfig = {
   assetPrefix: '/Portfolio/',
   images: {
     unoptimized: true,
-    domains: [
-      'drive.google.com', 
-      'lh3.googleusercontent.com',
-      'user-images.githubusercontent.com',
-      'timelines.ai'
-    ],
+    domains: ['drive.google.com', 'lh3.googleusercontent.com'], // Add lh3.googleusercontent.com
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,17 +15,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'user-images.githubusercontent.com',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'timelines.ai',
+        hostname: 'lh3.googleusercontent.com', // Add this pattern
         pathname: '**',
       }
     ],
