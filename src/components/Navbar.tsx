@@ -17,29 +17,39 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
   const router = useRouter();
 
   const navItems = [
-    { name: 'Home', href: '/' },             // No need for '/Portfolio', basePath handles it
-    { name: 'About', href: '/#about' },      // Corrected for anchor links
-    { name: 'Skills', href: '/#skills' },    // Corrected for anchor links
-    { name: 'Projects', href: '/#projects' },// Corrected for anchor links
-    { name: 'Education', href: '/#education'},// Corrected for anchor links
-    { name: 'Blog', href: '/blog' },         // Blog remains the same
-    { name: 'Contact', href: '/#contact' }   // Corrected for anchor links
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Education', href: '/#education' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/#contact' }
   ];
-  
+
+  const handleNavigation = (href: string) => {
+    if (href.includes('#')) {
+      const sectionId = href.split('#')[1];
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      router.push(href);
+    }
+  };
 
   const handleAuthAction = async () => {
     if (currentUser) {
       try {
         await logout();
-        router.push('/'); // Redirect to the root of the basePath
+        router.push('/');
       } catch (error) {
         console.error('Logout failed', error);
       }
     } else {
-      router.push('/auth'); // Redirect to `/auth` under the basePath
+      router.push('/auth');
     }
   };
-  
 
   return (
     <motion.nav 
@@ -51,9 +61,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
       } shadow-md`}
     >
       <div className="container mx-auto flex justify-between items-center p-4">
-        <Link href="/Portfolio/" className="text-2xl font-bold">
+        <button 
+          onClick={() => handleNavigation('/')}
+          className="text-2xl font-bold"
+        >
           Lovish Manchanda
-        </Link>
+        </button>
 
         <div className="flex items-center space-x-6">
           {navItems.map((item) => (
@@ -62,15 +75,14 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link 
-                href={item.href} 
+              <button 
+                onClick={() => handleNavigation(item.href)}
                 className={`hover:text-blue-500 transition-colors ${
                   isDarkMode ? 'hover:text-blue-300' : 'hover:text-blue-700'
                 }`}
-                scroll={!item.href.includes('#')} // Disable scroll for anchor links
               >
                 {item.name}
-              </Link>
+              </button>
             </motion.div>
           ))}
 
