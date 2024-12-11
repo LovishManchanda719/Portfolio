@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Home, Moon, Sun, LogIn, LogOut, User } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface NavbarProps {
   isDarkMode: boolean;
@@ -15,6 +15,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
   const { currentUser, logout } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -26,12 +27,26 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
     { name: 'Contact', href: '/#contact' }
   ];
 
-  const handleNavigation = (href: string) => {
+  const handleNavigation = async (href: string) => {
     if (href.includes('#')) {
       const sectionId = href.split('#')[1];
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      
+      // If we're not on the home page, navigate home first
+      if (pathname !== '/') {
+        await router.push('/');
+        // Wait for the page to load before scrolling
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // If we're already on the home page, just scroll
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else {
       router.push(href);
