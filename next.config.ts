@@ -2,7 +2,6 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/portfolio', // replace 'portfolio' with your repository name
   images: {
     unoptimized: true,
     domains: ['drive.google.com'],
@@ -14,6 +13,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Remove basePath if you want the site to be served from the root
+  // Only keep it if you want the site to be served from a subdirectory
+  // basePath: '/your-repo-name',
 }
 
 export default nextConfig
