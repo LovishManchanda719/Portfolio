@@ -18,12 +18,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/#about' },
-    { name: 'Skills', href: '/#skills' },
-    { name: 'Projects', href: '/#projects' },
-    { name: 'Education', href: '/#education' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Education', href: '#education' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/#contact' }
+    { name: 'Contact', href: '#contact' }
   ];
 
   const handleAuthAction = async () => {
