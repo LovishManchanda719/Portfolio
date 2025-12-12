@@ -1,20 +1,55 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Lovish Manchanda | Personal Portfolio
 
-# Run and deploy your AI Studio app
+## ✨ Overview
 
-This contains everything you need to run your app locally.
+Welcome to the repository for my personal portfolio website! This site serves as a comprehensive showcase of my skills, projects, and professional background.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1NRMzI3g1cfpdlMXZtldc9xTZ5Djn0bkv
+Built with modern technologies, the portfolio is designed to be fast, responsive, and visually appealing, utilizing a component-based architecture for easy maintenance and scalability.
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## 🛠️ Technology Stack
 
+This project is built using a modern front-end stack to ensure a high-quality user experience and developer workflow.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+| Category | Technology | Description |
+| :--- | :--- | :--- |
+| **Framework** | **React** (via Vite) | A JavaScript library for building user interfaces. |
+| **Styling** | **Tailwind CSS** | A utility-first CSS framework for rapidly styling and building responsive designs. |\
+| **Bundler** | **Vite** | A modern build tool that provides an extremely fast development environment. |
+
+---
+
+## 🚀 Getting Started
+
+Follow these instructions to get a local copy of the project up and running for development or testing.
+
+### Prerequisites
+
+You must have **Node.js** and **npm** (or yarn/pnpm) installed on your machine.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/LovishManchanda719/Portfolio
+    ```
+2.  **Navigate into the project directory:**
+    ```bash
+    cd Portfolio
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    # OR
+    # yarn install
+    ```
+
+### Running the Project Locally
+
+To run the project in development mode (with hot-reloading):
+
+```bash
+npm run dev
+# OR
+# yarn dev
