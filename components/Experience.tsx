@@ -26,10 +26,14 @@ export const Experience: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-2 text-primary font-medium mb-3">
                     <span>{exp.company}</span>
-                    <span className="text-slate-500">•</span>
-                    <span className="text-sm text-slate-400 flex items-center gap-1">
-                        <MapPin size={14} /> {exp.location}
-                    </span>
+                    {exp.location && (
+                      <>
+                        <span className="text-slate-500">•</span>
+                        <span className="text-sm text-slate-400 flex items-center gap-1">
+                            <MapPin size={14} /> {exp.location}
+                        </span>
+                      </>
+                    )}
                     </div>
                     <ul className="space-y-2">
                     {exp.points.map((point, pIdx) => (

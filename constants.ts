@@ -40,6 +40,28 @@ export const EDUCATION: Education[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
+    role: "Technology Program Intern",
+    company: "Wells Fargo",
+    location: "Bangalore, India",
+    duration: "May 2026 – July 2026",
+    points: [
+      "Engineered an automation pipeline using Playwright and PyWinAuto to extract data from Vena, validate Excel reports, and upload them to Axiom.",
+      "Reduced report processing time from 90+ minutes to under 20 minutes, achieving a 78% efficiency gain.",
+      "Implemented parallel processing for multiple reports, increasing workflow throughput by over 4.5× and eliminating manual effort."
+    ]
+  },
+  {
+    role: "Software Developer Intern",
+    company: "Zaptics",
+    location: "Noida, Delhi",
+    duration: "Jan 2026 – April 2026",
+    points: [
+      "Developed a React + Python car infotainment system, implementing media, navigation, and system control modules.",
+      "Deployed on Raspberry Pi and migrated to Toradex boards, improving stability and performance by 35%.",
+      "Optimized API-hardware integration, reducing system response time by 40%."
+    ]
+  },
+  {
     role: "Full Stack Developer Intern",
     company: "Krayons",
     location: "NSP, Delhi",
